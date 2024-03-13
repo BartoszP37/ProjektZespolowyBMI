@@ -34,6 +34,13 @@ header {
   user-select: none;
 }
 
+.logo a {
+  text-decoration: none;
+  color: #E8BB9B;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
 main a {
   position: relative;
   color: #E8BB9B;
@@ -60,8 +67,8 @@ main a {
 
 /* KALKULATOR */
 .calculator {
+  margin-top: 100px;
   width: 250px;
-  margin: 50px auto;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 10px;
@@ -90,6 +97,9 @@ main a {
   border: 1px solid transparent;
   border-radius: 15px;
   cursor: pointer;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 .button:hover {
@@ -112,8 +122,6 @@ main a {
   font-weight: bold;
 }
 
-
-.backspace-outline {
-  width: 150%;
-  height: 150%;
+#backspace ion-icon {
+  font-size: 24px;
 }
