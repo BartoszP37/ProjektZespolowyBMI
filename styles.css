@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FEFEFA;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+
+.logo {
+  font-size: 2em;
+  color: #E8BB9B;
+  user-select: none;
+}
+
+main a {
+  position: relative;
+  color: #E8BB9B;
+  margin: 10px;
+  font-weight:lighter;
+  text-align: center;
+  font-size:6vh;
+  text-decoration: none;
+}
+
+.calc {
+  text-align: center;
+  margin: 15px;
+}
+
+.func {
+  text-align: center;
+  margin: 15px;
+}
+
+.menu {
+  margin-top: 150px;
+}
+
+/* KALKULATOR */
+.calculator {
+  width: 250px;
+  margin: 50px auto;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.display {
+  background-color: #f4f4f4;
+  border: 3px solid #292929;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+.button {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f4f4f4;
+}
+
+#clear, #percent, #backspace  {
+  background-color:#E8BB9B;
+  color: #292929;
+}
+
+#divide, #multiply, #subtract, #add, #equals {
+  background-color: #292929;
+  color: #E8BB9B;
+}
+
+#number, #dot {
+  background-color: #292929;
+  color: #f4f4f4;
+  font-weight: bold;
+}
+
+
+.backspace-outline {
+  width: 150%;
+  height: 150%;
+}
