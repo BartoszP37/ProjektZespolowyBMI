@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (button.id === "clear") {
                 displayText = "0";
             } else if (button.id === "backspace") {
-                displayText = displayText.slice(0, -1);
+                displayText = "0";
             } else if (button.id === "percent") {
                 const percentValue = parseFloat(displayText) / 100; // Oblicz procent
                 displayText = (parseFloat(displayText) + (percentValue * parseFloat(displayText))).toFixed(2);
