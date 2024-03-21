@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Funkcja Kwadratowa</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <!-- <h2>Logo</h2> -->
+        <a onclick="window.location.href='/'">Logo</a>
+    </div>
+</header>
+<main>
+    <div class="funkcjakwadratowaliczby">
+        <form class="form" action="liczfunkcjakwadratowa" method="post">
+            <label for="chk" aria-hidden="true"> Podaj funkcję kwadratową</label>
+             <input class="input" type="number" name="a" placeholder="x2" autocomplete="off" required="">
+             <input class="input" type="number" name="b" placeholder="x" autocomplete="off" required="">
+             <input class="input" type="number" name="c" placeholder="c" autocomplete="off" required="">
+             <button>Oblicz</button>
+        </form>
+    </div>
+</main>
+<script src="scripts/script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
