@@ -102,10 +102,6 @@ main a {
   align-items: center; 
 }
 
-.button:hover {
-  background-color: #f4f4f4;
-}
-
 #clear, #percent, #backspace  {
   background-color:#E8BB9B;
   color: #292929;
@@ -116,7 +112,7 @@ main a {
   color: #E8BB9B;
 }
 
-#number, #dot {
+.number, #dot {
   background-color: #292929;
   color: #f4f4f4;
   font-weight: bold;
