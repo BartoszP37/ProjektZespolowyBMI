@@ -1,32 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/pictures/sigma.png">
     <title>Funkcja Kwadratowa</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header>
     <div class="logo">
-        <!-- <h2>Logo</h2> -->
-        <a onclick="window.location.href='/'">Logo</a>
+        <a href="/">
+            <img src="/pictures/sigma.png" alt="logo">
+        </a>
     </div>
 </header>
 <main>
-    <div class="funkcjakwadratowaliczby">
+    <div class="funkcjakwadratowa">
         <form class="form" action="liczfunkcjakwadratowa" method="post">
             <label for="chk" aria-hidden="true"> Podaj funkcję kwadratową</label>
-             <input class="input" type="number" name="a" placeholder="x2" autocomplete="off" required="">
-             <input class="input" type="number" name="b" placeholder="x" autocomplete="off" required="">
-             <input class="input" type="number" name="c" placeholder="c" autocomplete="off" required="">
+            <div class="input-container">
+                <input class="input" type="number" name="a" placeholder="a" autocomplete="off" required="">
+                <a>x2 + </a>
+                <input class="input" type="number" name="b" placeholder="b" autocomplete="off" required="">
+                <a>x + </a>
+                <input class="input" type="number" name="c" placeholder="c" autocomplete="off" required="">
+            </div>
              <button>Oblicz</button>
         </form>
     </div>
+
+    <div>
+        <p th:text="${info}"></p>
+    </div>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
 </main>
-<script src="scripts/script.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var a = /*[[${a}]]*/;
+    var b = /*[[${b}]]*/;
+    var c = /*[[${c}]]*/;
+    var delta = /*[[${delta}]]*/;
+    var m = /*[[${m}]]*/;
+    var n = /*[[${n}]]*/;
+
+    function calculateQuadraticFunction(x) {
+        return a * x * x + b * x + c;
+    }
+
+    var dataPoints = [];
+    // Ustal przedział x w zależności od wartości m i n
+    var minX = Math.min(m, n) - 2;
+    var maxX = Math.max(m, n) + 2;
+    for (var x = minX; x <= maxX; x += 0.1) {
+        dataPoints.push({
+            x: x,
+            y: calculateQuadraticFunction(x)
+        });
+    }
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Funkcja kwadratowa',
+                backgroundColor: '#E8BB9B',
+                borderColor: '#E8BB9B',
+                data: dataPoints,
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    type: 'linear',
+                    position: 'bottom'
+                }],
+                yAxes: [{
+                    type: 'linear',
+                    position: 'left'
+                }]
+            }
+        }
+    });
+    /*]]>*/
+</script>
 </body>
 </html>
