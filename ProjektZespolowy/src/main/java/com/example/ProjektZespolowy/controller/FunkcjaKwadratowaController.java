@@ -16,18 +16,26 @@ public class FunkcjaKwadratowaController {
     @PostMapping("/liczfunkcjakwadratowa")
     public String liczFunkcjaKwadratowa(@RequestParam("a") int a, @RequestParam("b") int b, @RequestParam("c") int c, Model model){
         int delta=(b*b)-4*a*c;
+        double m = 0;
+        double n = 0;
         if(delta<0){
             model.addAttribute("info", "Brak miejsc zerowych");
         }
         else if(delta==0) {
-            int m = (-1 * b) / (2 * a);
+            m = (-1 * b) / (2 * a);
             model.addAttribute("info", "Funkcja posiada jedno miejsce zerowe i jest ono równe: " + m);
         }
         else{
-            double m=(-1*b-Math.sqrt(delta))/(2*a);
-            double n=(-1*b+Math.sqrt(delta))/(2*a);
+            m=(-1*b-Math.sqrt(delta))/(2*a);
+            n=(-1*b+Math.sqrt(delta))/(2*a);
             model.addAttribute("info", "Funkcja posiada dwa miejsca zerowe i wynoszą one: "+ m + " " + n);
         }
+        model.addAttribute("a", a);
+        model.addAttribute("b", b);
+        model.addAttribute("c", c);
+        model.addAttribute("delta", delta);
+        model.addAttribute("m", m);
+        model.addAttribute("n", n);
         return "funkcjaKwadratowa";
     }
 

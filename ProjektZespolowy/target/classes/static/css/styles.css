@@ -28,13 +28,12 @@ header {
   background: transparent;
 }
 
-.logo {
-  font-size: 2em;
-  color: #E8BB9B;
-  user-select: none;
+.logo img {
+  width: 100px;
+  height: auto;
 }
 
-.logo a {
+a {
   text-decoration: none;
   color: #E8BB9B;
   font-weight: bold;
@@ -63,6 +62,7 @@ main a {
 
 .menu {
   margin-top: 150px;
+  cursor: pointer;
 }
 
 /* KALKULATOR */
@@ -120,4 +120,43 @@ main a {
 
 #backspace ion-icon {
   font-size: 24px;
+}
+
+.funkcjakwadratowa .form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+}
+
+.funkcjakwadratowa label{
+  color: #E8BB9B;
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.funkcjakwadratowa .input{
+  width: 100px;
+  height: 40px;
+  background: #E8BB9B;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+
+.funkcjakwadratowa .form button{
+  width: 85%;
+  height: 40px;
+  margin: 12px auto 10%;
+  color: black;
+  background: #E8BB9B;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
