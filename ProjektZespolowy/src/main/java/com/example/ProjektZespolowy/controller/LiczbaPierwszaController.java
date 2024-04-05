@@ -28,9 +28,9 @@ public class LiczbaPierwszaController {
         }
 
         if (pierwsza) {
-            model.addAttribute("info", liczba + " jest liczbą pierwszą.");
+            model.addAttribute("info", liczba + " jest liczbą pierwszą");
         } else {
-            model.addAttribute("info", liczba + " nie jest liczbą pierwszą.");
+            model.addAttribute("info", liczba + " nie jest liczbą pierwszą");
         }
 
         return "liczbaPierwsza";
