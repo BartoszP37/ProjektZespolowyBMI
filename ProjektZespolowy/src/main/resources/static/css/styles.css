@@ -211,3 +211,56 @@ div.info p{
   display: flex;
   font-weight: bold;
 }
+
+.PotegiPierwiastki
+{
+    background-color: #E8BB9B;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px #292929;
+    text-align: center;
+}
+
+.PotegiPierwiastki h1
+{
+    margin-bottom: 20px;
+}
+
+.PotegiPierwiastki .wybor
+{
+    margin-bottom: 20px;
+}
+
+.PotegiPierwiastki .wybor button
+{
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #638192;
+    color: #fff;
+}
+
+.PotegiPierwiastki .wybor button:hover
+{
+    background-color: #FEFEFA;
+    color: #292929;
+}
+
+.PotegiPierwiastki .polaDanych
+{
+    margin: 6px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.PotegiPierwiastki .wynik
+{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
