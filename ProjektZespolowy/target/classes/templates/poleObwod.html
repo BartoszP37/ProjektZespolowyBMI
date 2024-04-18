@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/pictures/sigma.png">
+    <title>Strona Główna</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        ::placeholder
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/pictures/sigma.png" alt="logo">
+            </a>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Kalkulator pola i obwodu</h1>
+            <form id="formularz">
+                <input type="radio" name="figura" id="kwadrat" value="kwadrat">
+                <label for="kwadrat">Kwadrat</label>
+                <input type="radio" name="figura" id="trojkat" value="trójkąt">
+                <label for="trojkat">Trójkąt</label>
+                <div id="polaForm"></div>
+            </form>
+        </div>
+    </main>
+    <script>
+        const form = document.getElementById("formularz");
+        const polaForm = document.getElementById("polaForm");
+
+        formularz.addEventListener("change", sprawdzFigure);
+
+        function sprawdzFigure()
+        {
+            var figura = document.getElementsByName("figura");
+
+            for(i = 0; i < figura.length; i++)
+            {
+                if(figura[i].checked && figura[i].value == "kwadrat")
+                {
+                    dodajPole("number", "bokFigury", "Podaj długość boku");
+                }
+                else if(figura[i].checked && figura[i].value == "trójkąt")
+                {
+                    dodajPole("number", "podstawa", "Podaj długość podstawy")
+                    dodajPole("number", "wysokosc", "Podaj wysokość")
+                }
+            }
+        }
+
+        function dodajPole(typ, id, placeholder)
+        {
+            var pole = document.createElement("input");
+            pole.setAttribute("type", typ);
+            pole.setAttribute("id", id)
+            pole.setAttribute("placeholder", placeholder)
+            polaForm.appendChild(pole);
+        }
+    </script>
+</body>
+</html>
