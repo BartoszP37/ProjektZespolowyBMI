@@ -21,59 +21,77 @@
         {
             text-align: center;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="/">
-                <img src="/pictures/sigma.png" alt="logo">
-            </a>
-        </div>
-    </header>
-    <main>
-        <div>
-            <h1>Kalkulator pola i obwodu</h1>
-            <form id="formularz">
-                <input type="radio" name="figura" id="kwadrat" value="kwadrat">
-                <label for="kwadrat">Kwadrat</label>
-                <input type="radio" name="figura" id="trojkat" value="trójkąt">
-                <label for="trojkat">Trójkąt</label>
-                <div id="polaForm"></div>
-            </form>
-        </div>
-    </main>
-    <script>
-        const form = document.getElementById("formularz");
-        const polaForm = document.getElementById("polaForm");
-
-        formularz.addEventListener("change", sprawdzFigure);
-
-        function sprawdzFigure()
-        {
-            var figura = document.getElementsByName("figura");
-
-            for(i = 0; i < figura.length; i++)
-            {
-                if(figura[i].checked && figura[i].value == "kwadrat")
-                {
-                    dodajPole("number", "bokFigury", "Podaj długość boku");
-                }
-                else if(figura[i].checked && figura[i].value == "trójkąt")
-                {
-                    dodajPole("number", "podstawa", "Podaj długość podstawy")
-                    dodajPole("number", "wysokosc", "Podaj wysokość")
-                }
+<header>
+    <div class="logo">
+        <a href="/">
+            <img src="/pictures/sigma.png" alt="logo">
+        </a>
+    </div>
+</header>
+<main>
+    <div>
+        <h1>Kalkulator pola i obwodu</h1>
+        <form id="formularz">
+            <input type="radio" name="figura" id="kwadrat" value="kwadrat" onchange="showForm('kwadratForm')">
+            <label for="kwadrat">Kwadrat</label>
+            <input type="radio" name="figura" id="prostokąt" value="prostokąt" onchange="showForm('prostokątForm')">
+            <label for="prostokąt">Prostokąt</label>
+            <input type="radio" name="figura" id="trapez" value="trapez" onchange="showForm('trapezForm')">
+            <label for="trapez">Trapez</label>
+            <input type="radio" name="figura" id="kolo" value="kolo" onchange="showForm('koloForm')">
+            <label for="kolo">Koło</label>
+            <div id="polaForm"></div>
+        </form>
+    </div>
+    <div class="formContainer hidden" id="kwadratForm">
+        <form class="form" action="kwadrat" method="post">
+            <label aria-hidden="true">Podaj boki kwadratu</label>
+            <input class="input" type="number" autocomplete="off" name="boka" placeholder="Podaj bok a" required="">
+            <button>Oblicz</button>
+        </form>
+    </div>
+    <div class="formContainer hidden" id="prostokątForm">
+        <form class="form" action="prostokąt" method="post">
+            <label aria-hidden="true">Podaj boki prostokąta</label>
+            <input class="input" type="number" autocomplete="off" name="boka" placeholder="Podaj bok a" required="">
+            <input class="input" type="number" autocomplete="off" name="bokb" placeholder="Podaj bok b" required="">
+            <button>Oblicz</button>
+        </form>
+    </div>
+    <div class="formContainer hidden" id="trapezForm">
+        <form class="form" action="trapez" method="post">
+            <label aria-hidden="true">Podaj boki trapezu równoramiennego</label>
+            <input class="input" type="number" autocomplete="off" name="boka" placeholder="Podaj bok a" required="">
+            <input class="input" type="number" autocomplete="off" name="bokb" placeholder="Podaj bok b" required="">
+            <input class="input" type="number" autocomplete="off" name="wysokosc" placeholder="Podaj wysokość" required="">
+            <button>Oblicz</button>
+        </form>
+    </div>
+    <div class="formContainer hidden" id="koloForm">
+        <form class="form" action="kolo" method="post">
+            <label aria-hidden="true">Podaj promień koła</label>
+            <input class="input" type="number" autocomplete="off" name="promien" placeholder="Podaj promień" required="">
+            <button>Oblicz</button>
+        </form>
+    </div>
+    <div>
+        <p th:text="${info}"></p>
+    </div>
+</main>
+<script>
+        function showForm(formId) {
+            var forms = document.getElementsByClassName("formContainer");
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].classList.add("hidden");
             }
-        }
-
-        function dodajPole(typ, id, placeholder)
-        {
-            var pole = document.createElement("input");
-            pole.setAttribute("type", typ);
-            pole.setAttribute("id", id)
-            pole.setAttribute("placeholder", placeholder)
-            polaForm.appendChild(pole);
+            document.getElementById(formId).classList.remove("hidden");
         }
     </script>
 </body>
