@@ -165,7 +165,7 @@ main a {
   padding-top: 200px;
 }
 
-.liczbaPierwsza .form{
+.form{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,7 +173,7 @@ main a {
   padding: 24px;
 }
 
-.liczbaPierwsza label{
+label{
   color: #E8BB9B;
   font-size: 2rem;
   justify-content: center;
@@ -181,7 +181,7 @@ main a {
   font-weight: bold;
 }
 
-.liczbaPierwsza .input{
+.input{
   width: 100%;
   height: 40px;
   background: #E8BB9B;
@@ -192,7 +192,7 @@ main a {
   border-radius: 4px;
 }
 
-.liczbaPierwsza .form button{
+.form button{
   width: 85%;
   height: 40px;
   margin: 12px auto 10%;
@@ -263,4 +263,8 @@ div.info p{
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
+}
+
+h1{
+    color: #E8BB9B;
 }
