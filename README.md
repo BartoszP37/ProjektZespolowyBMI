@@ -8,4 +8,7 @@ Często podczas nauki lub pracy możemy nie być pewni poprawności swoich oblic
 Projekt ten to aplikacja webowa, która pozwala sprawdzić wyniki obliczeń.
   
 **How?**  
-Tworząc aplikację webową opartą na HTML i JavaScript, chcemy utworzyć prosty i przystępny sposób sprawdzania poprawności swoich działań.
+Tworząc aplikację webową opartą na HTML i JavaScript, chcemy utworzyć prosty i przystępny sposób sprawdzania poprawności swoich działań.  
+
+**Uruchomienie aplikacji**  
+Aby uruchomić aplikację, należy otworzyć projekt w IntelliJ IDEA oraz go uruchomić, a następnie w przeglądarce wejść na localhost:8060.
